@@ -1,0 +1,5 @@
+{
+    "clear screen":["cls","clear","clear screen"],
+    "change directory":["cd","change page"],
+    "navigate":["navigate","goto", "navigate to"]
+}

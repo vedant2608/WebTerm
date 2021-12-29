@@ -1,0 +1,33 @@
+{
+  "styles":[
+    {
+    "htmlElement":"terminal",
+    "configStyles":[
+          "height:auto;",
+          "display:grid;",
+          "margin:0;",
+          "grid-template-columns:repeat(auto-fill,minmax(200,1fr));"
+        ]
+   },
+   {
+    "htmlElement":"textarea",
+    "configStyles":[
+      "background-color:black;",
+      "height: 30rem;",
+      "color: yellow;",
+      "font-size: 20px;",
+      "margin-left : 10%;",
+      "margin-top:10%;",
+      "width:100%;",
+      "padding-right:0;",
+      "padding-left:1%;",
+      "resize:vertical;",
+      "max-width:80%;",
+      "border-radius: 25px;",
+      "border-left: 12px groove #00ff3f;",
+      "border-right: 12px groove #00ff3f;",
+      "outline:none;"
+    ]
+   }
+]
+}
