@@ -56,7 +56,7 @@ cls
 *Note that each command can have alternative and those are specified in commands.json 
 
 ## Want to try these three commands
-1. Goto [This link](!https://vedant2608.github.io/WebTerm/)
+1. Goto [This link](https://vedant2608.github.io/WebTerm/)
 2. You will find the terminal 
 3. The index page has two div about and home so try the following to commands. and see the behaviour of the pages
  ```java
