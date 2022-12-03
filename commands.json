@@ -1,5 +1,28 @@
 {
-    "clear screen":["cls","clear","clear screen"],
-    "change directory":["cd","change page"],
-    "navigate":["navigate","goto", "navigate to"]
+    "clear screen": [
+        "cls",
+        "clear",
+        "clear screen"
+    ],
+    "change directory": [
+        "cd",
+        "change page"
+    ],
+    "navigate": [
+        "navigate",
+        "goto",
+        "navigate to"
+    ],
+    "tellmeaboutyourself": [
+        "speak about yourself",
+        "speak about you",
+        "tell about you",
+        "about this person",
+        "aboutthisperson",
+        "about this person"
+    ],
+    "stopspeaking": [
+        "stop talking",
+        "stop speaking"
+    ]
 }

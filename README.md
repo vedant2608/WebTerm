@@ -53,6 +53,10 @@ goto home //If your web has element with id as home this will take you to that d
 ```java
 cls
 ```
+4) To let user hear what you have written in yout about.txt (Write about yourself in about.txt file and after typing below command user will hear about you.) 
+```java
+tell about you
+```
 *Note that each command can have alternative and those are specified in commands.json 
 
 ## Want to try these three commands

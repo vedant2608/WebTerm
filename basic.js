@@ -1,5 +1,5 @@
-//File to contain two commands
-/**
+//File to contain commands
+/*
  * 
  * 
  * 
@@ -7,7 +7,7 @@
  * 1) clear
  * 2) change page
  * 3) change div
- * 
+ * 4) Speak The about me part or intoduction part
  * 
  * 
  * */
@@ -77,6 +77,33 @@ class BaseCommand {
         }
     }
 
+    //Driver function to speak what has been passed
+    static speak(parameter, element, text) {
+        if ('speechSynthesis' in window) {
+            fetch("about.txt")
+                .then((response) => {
+                    if (response.status == 200) {
+                        return response.text();
+                    } else if (response.status == 404) {
+                        let writeValue = element.value + `File Does Not Exist`;
+                        element.value = writeValue.split(initialText)[1] + "\n" + initialText;
+                        return 1;
+                    }
+                }).then((sampleResp) => {
+                    var synth = window.speechSynthesis;
+                    let text_to_speak = sampleResp;
+                    const utterThis = new SpeechSynthesisUtterance(text_to_speak);
+                    synth.speak(utterThis);
+                })
+            return 0;
+        } else {
+            console.error("Web Speech API does not supported");
+            return 1;
+        }
+    }
+
+
+
     //Compute the commands
     computeCommands(commandsFromInput) {
 
@@ -103,16 +130,35 @@ class BaseCommand {
 
         //GOTO COMMAND
         this.commandSet['navigate'].map((item) => {
-            let gotoCommandSplit = commandsFromInput.split(" ");
-            let gotoCommand = gotoCommandSplit.slice(0, -1).join(" ");
-            let gotoCommandParameter = gotoCommandSplit[gotoCommandSplit.length - 1];
+            let navigateCommandSplit = commandsFromInput.split(" ");
+            let navigateCommand = navigateCommandSplit.slice(0, -1).join(" ");
+            let navigateCommandParameter = navigateCommandSplit[navigateCommandSplit.length - 1];
 
 
-            if (gotoCommand.trim() === item.trim() || gotoCommandParameter.trim() == item.trim()) {
-                BaseCommand.gotoDiv(gotoCommandParameter.trim(), this.element, this.initialText);
+            if (navigateCommand.trim() === item.trim() || navigateCommandParameter.trim() == item.trim()) {
+                BaseCommand.gotoDiv(navigateCommandParameter.trim(), this.element, this.initialText);
                 flag = 0;
             }
         });
+
+        //SPEAK Command
+        this.commandSet['tellmeaboutyourself'].map((item) => {
+            if (commandsFromInput.trim() === item.trim() || commandsFromInput.trim() == item.trim()) {
+                BaseCommand.speak(commandsFromInput.trim(), this.element, this.initialText);
+                flag = 0;
+            }
+        });
+
+        //To stop speak
+        this.commandSet["stopspeaking"].map((item) => {
+            if (commandsFromInput.trim() === item.trim() || commandsFromInput.trim() == item.trim()) {
+                let synth = window.speechSynthesis;
+                synth.cancel();
+                flag = 0;
+            }
+        });
+
+
 
         return flag;
     }
