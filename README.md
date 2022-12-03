@@ -57,6 +57,11 @@ cls
 ```java
 tell about you
 ```
+
+5) To stop talking initiated by the above command
+```java
+stop talking
+```
 *Note that each command can have alternative and those are specified in commands.json 
 
 ## Want to try these three commands
