@@ -1,6 +1,1 @@
-Hello, My name is vedant datey
-I am the Software Engineer from Professor Ram meghe college of engineering and management, Badnera, Amravati
-I am a final year student and in my final year I have won the national level competition Smart India Hackathon.
-I am curious about data science, web developement as well as cyber security
-You can check my portfolio and can download my resume. 
-I will be happy to work with you :)
+This is terminals for portfolios
